@@ -3,8 +3,15 @@
  @click="$emit('click')"
   :style="btnStyles"
   class="btn">
+    <!-- icon -->
     <span
-      :class="`fas fa-${icon}`" />
+      v-if="icon"
+      :class="`${iconSet} ${icon}`" />
+
+    <!-- text -->
+    <span
+      v-if="text"
+      v-text="text" />
   </button>
 </template>
 
@@ -13,8 +20,14 @@ export default {
   name: 'ButtonItem',
   props: {
     icon: {
+      type: String
+    },
+    iconSet: {
       type: String,
-      required: true
+      default: 'fas'
+    },
+    text: {
+      type: String
     },
     size: {
       type: Number,
@@ -54,6 +67,7 @@ export default {
   outline: none;
   font-size: 1.5rem;
   color: #637892;
+  margin: 4px;
   &:hover {
     margin-top: var(--movement);
   }
