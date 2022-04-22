@@ -24,7 +24,7 @@ export default {
     },
     iconSet: {
       type: String,
-      default: 'fas'
+      default: 'pi'
     },
     text: {
       type: String

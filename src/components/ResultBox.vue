@@ -18,7 +18,7 @@
       :size="4"
       :movement="-0.5"
       :font-size="1.5"
-      icon="fa-sync"
+      icon="pi-sync"
       />
       <!-- question btn -->
     <button-item
@@ -26,7 +26,7 @@
       :size="4"
       :movement="-0.5"
       :font-size="1.5"
-      icon="fa-question"
+      icon="pi-question"
       />
   </div>
   <modal-item
@@ -42,7 +42,7 @@
    </template>
 
    <template v-slot:footer>
-      <button-item icon="fa-thumbs-up" />
+      <button-item icon="pi-thumbs-up" />
    </template>
   </modal-item>
 </template>

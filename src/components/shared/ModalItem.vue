@@ -14,7 +14,7 @@
 
       <footer>
         <slot name="footer" />
-        <button-item @click="$emit('cancel')" icon="fa-times" />
+        <button-item @click="$emit('cancel')" icon="pi-times" />
       </footer>
 
     </div>
