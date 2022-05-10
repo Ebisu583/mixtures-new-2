@@ -5,10 +5,10 @@
       <!-- header -->
       <app-header />
       <app-menu />
-
-      <!-- color mixin -->
-      <color-mixin />
-
+      <slide-fade-animation>
+      <!-- router view -->
+      <router-view />
+      </slide-fade-animation>
     </div>
   </div>
 </template>
@@ -16,15 +16,15 @@
 <script>
 import './styles/global.scss'
 import AppHeader from './components/AppHeader'
-import ColorMixin from './components/ColorMixin'
 import AppMenu from './components/AppMenu.vue'
+import SlideFadeAnimation from './components/shared/SlideFadeAnimation.vue'
 
 export default {
   name: 'App',
   components: {
     AppHeader,
-    ColorMixin,
-    AppMenu
+    AppMenu,
+    SlideFadeAnimation
   }
 }
 </script>

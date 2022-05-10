@@ -11,15 +11,18 @@ export default {
     items: [
       {
         label: 'Home',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        to: '/'
       },
       {
         label: 'Mixin',
-        icon: 'pi pi-filter'
+        icon: 'pi pi-filter',
+        to: '/mixin'
       },
       {
         label: 'About',
-        icon: 'pi pi-info'
+        icon: 'pi pi-info',
+        to: 'about'
       }
     ]
   })
