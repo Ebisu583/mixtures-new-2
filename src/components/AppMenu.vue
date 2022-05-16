@@ -23,6 +23,11 @@ export default {
         label: 'About',
         icon: 'pi pi-info',
         to: 'about'
+      },
+      {
+        label: 'My colors',
+        icon: 'pi pi-palette',
+        to: 'my-colors'
       }
     ]
   })

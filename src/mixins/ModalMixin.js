@@ -4,6 +4,7 @@ const modalMixin = {
   }),
   methods: {
     showModal () {
+      console.log('modal')
       this.modalVisible = true
     },
 

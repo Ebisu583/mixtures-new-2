@@ -1,5 +1,9 @@
 <template>
-  <div class="flask fadeIn animate__animated" :class="{ animate__shakeY: isAnimated }" :style="flaskStyle" ref='flask' @animationEnd="isAnimated = false">
+  <div
+  class="flask animate__animated"
+  :class="{ animate__shakeY: isAnimated, animate__fadeOutUp: isRemoved }"
+  :style="flaskStyle" ref='flask'
+  @animationEnd="isAnimated = false">
 
     <!-- decrement btn -->
     <button-item
@@ -19,6 +23,12 @@
       icon="pi-arrow-up"
       :movement="-0.5"
       @click="increment" />
+       <button-item
+      v-if="removeVisible"
+      class="flask__btn flask__btn--center"
+      icon="pi-trash"
+      :movement="-0.5"
+      @click="remove" />
   </div>
 
 </template>
@@ -28,7 +38,8 @@ export default {
   name: 'FlaskItem',
   components: { ButtonItem },
   data: () => ({
-    isAnimated: false
+    isAnimated: false,
+    isRemoved: false
   }),
   props: {
     size: {
@@ -48,6 +59,10 @@ export default {
     buttonsVisible: {
       type: Boolean,
       default: true
+    },
+    removeVisible: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -62,6 +77,10 @@ export default {
       // this.$refs.flask.classList.add('animate__animated', 'animate__shakeY')
       this.isAnimated = true
       this.$emit('decrement')
+    },
+    remove () {
+      this.isRemoved = true
+      setTimeout(() => this.$emit('remove'), 1000)
     }
   },
   computed: {
@@ -148,6 +167,11 @@ export default {
 
     &--left {
       left: 1rem;
+    }
+    &--center {
+      left: 50%;
+      transform: translate(-50%,-50%);
+
     }
   }
 
